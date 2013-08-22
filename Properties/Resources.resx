@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ahri_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\ahri_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="akali_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\akali_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alistar_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\alistar_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="amumu_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\amumu_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="anivia_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\anivia_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="annie_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\annie_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ashe_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\ashe_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="blitzcrank_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\blitzcrank_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brand_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\brand_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bronze_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\bronze_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bronze_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\bronze_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bronze_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\bronze_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bronze_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\bronze_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bronze_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\bronze_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="caitlyn_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\caitlyn_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cassiopeia_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\cassiopeia_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="challenger_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\challenger_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chogath_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\chogath_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="corki_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\corki_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="darius_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\darius_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="default_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\default_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diamond_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\diamond_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diamond_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\diamond_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diamond_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\diamond_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diamond_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\diamond_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diamond_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\diamond_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diana_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\diana_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="draven_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\draven_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="drmundo_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\drmundo_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="elise_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\elise_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="evelynn_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\evelynn_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ezreal_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\ezreal_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fiddlesticks_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\fiddlesticks_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fiora_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\fiora_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fizz_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\fizz_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="galio_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\galio_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gangplank_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\gangplank_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="garen_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\garen_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gold_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\gold_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gold_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\gold_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gold_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\gold_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gold_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\gold_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gold_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\gold_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gragas_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\gragas_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="graves_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\graves_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hecarim_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\hecarim_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="heimerdinger_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\heimerdinger_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="irelia_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\irelia_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="janna_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\janna_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jarvaniv_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\jarvaniv_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jax_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\jax_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jayce_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\jayce_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="karma_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\karma_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="karthus_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\karthus_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kassadin_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\kassadin_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="katarina_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\katarina_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kayle_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\kayle_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kennen_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\kennen_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="khazix_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\khazix_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kogmaw_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\kogmaw_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leblanc_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\leblanc_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leesin_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\leesin_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leona_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\leona_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lissandra_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\lissandra_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lulu_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\lulu_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lux_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\lux_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="malphite_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\malphite_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="malzahar_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\malzahar_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maokai_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\maokai_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="masteryi_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\masteryi_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\horse-tasatic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="missfortune_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\missfortune_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mordekaiser_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\mordekaiser_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="morgana_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\morgana_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nami_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\nami_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nasus_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\nasus_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nautilus_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\nautilus_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nidalee_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\nidalee_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nocturne_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\nocturne_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nunu_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\nunu_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="olaf_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\olaf_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orianna_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\orianna_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pantheon_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\pantheon_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="platinum_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\platinum_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="platinum_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\platinum_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="platinum_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\platinum_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="platinum_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\platinum_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="platinum_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\platinum_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="poppy_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\poppy_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quinn_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\quinn_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rammus_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\rammus_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="renekton_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\renekton_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rengar_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\rengar_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="riven_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\riven_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rumble_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\rumble_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ryze_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\ryze_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sejuani_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\sejuani_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shaco_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\shaco_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shen_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\shen_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shyvana_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\shyvana_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="silver_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\silver_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="silver_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\silver_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="silver_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\silver_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="silver_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\silver_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="silver_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\silver_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="singed_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\singed_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sion_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\sion_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sivir_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\sivir_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="skarner_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\skarner_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sona_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\sona_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soraka_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\soraka_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="swain_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\swain_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="syndra_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\syndra_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="talon_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\talon_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="taric_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\taric_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="teemo_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\teemo_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thresh_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\thresh_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tristana_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\tristana_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trundle_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\trundle_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tryndamere_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\tryndamere_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="twistedfate_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\twistedfate_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="twitch_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\twitch_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="udyr_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\udyr_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unranked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medals\unranked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="urgot_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\urgot_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="varus_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\varus_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vayne_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\vayne_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="veigar_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\veigar_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="viktor_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\viktor_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vi_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\vi_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vladimir_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\vladimir_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volibear_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\volibear_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warwick_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\warwick_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wukong_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\wukong_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xerath_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\xerath_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xinzhao_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\xinzhao_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yorick_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\yorick_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zac_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\zac_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zed_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\zed_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ziggs_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\ziggs_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zilean_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\zilean_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zyra_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\zyra_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

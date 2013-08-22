@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFD9DC7E-652F-4929-A0CF-776237A2F159}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EloCheck</RootNamespace>
+    <AssemblyName>EloCheck</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\splash\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\medals\bronze_1.png" />
+    <Resource Include="Resources\medals\bronze_2.png" />
+    <Resource Include="Resources\medals\bronze_3.png" />
+    <Resource Include="Resources\medals\bronze_4.png" />
+    <Resource Include="Resources\medals\bronze_5.png" />
+    <Resource Include="Resources\medals\challenger_1.png" />
+    <Resource Include="Resources\medals\diamond_1.png" />
+    <Resource Include="Resources\medals\diamond_2.png" />
+    <Resource Include="Resources\medals\diamond_3.png" />
+    <Resource Include="Resources\medals\diamond_4.png" />
+    <Resource Include="Resources\medals\diamond_5.png" />
+    <Resource Include="Resources\medals\gold_1.png" />
+    <Resource Include="Resources\medals\gold_2.png" />
+    <Resource Include="Resources\medals\gold_3.png" />
+    <Resource Include="Resources\medals\gold_4.png" />
+    <Resource Include="Resources\medals\gold_5.png" />
+    <Resource Include="Resources\medals\platinum_1.png" />
+    <Resource Include="Resources\medals\platinum_2.png" />
+    <Resource Include="Resources\medals\platinum_3.png" />
+    <Resource Include="Resources\medals\platinum_4.png" />
+    <Resource Include="Resources\medals\platinum_5.png" />
+    <Resource Include="Resources\medals\silver_1.png" />
+    <Resource Include="Resources\medals\silver_2.png" />
+    <Resource Include="Resources\medals\silver_3.png" />
+    <Resource Include="Resources\medals\silver_4.png" />
+    <Resource Include="Resources\medals\silver_5.png" />
+    <Resource Include="Resources\medals\unranked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\horse-tasatic.png" />
+    <Resource Include="Resources\loading.gif" />
+    <Resource Include="Resources\splash\ahri_square_0.png" />
+    <Resource Include="Resources\splash\akali_square_0.png" />
+    <Resource Include="Resources\splash\alistar_square_0.png" />
+    <Resource Include="Resources\splash\amumu_square_0.png" />
+    <Resource Include="Resources\splash\anivia_square_0.png" />
+    <Resource Include="Resources\splash\annie_square_0.png" />
+    <Resource Include="Resources\splash\ashe_square_0.png" />
+    <Resource Include="Resources\splash\blitzcrank_square_0.png" />
+    <Resource Include="Resources\splash\brand_square_0.png" />
+    <Resource Include="Resources\splash\caitlyn_square_0.png" />
+    <Resource Include="Resources\splash\cassiopeia_square_0.png" />
+    <Resource Include="Resources\splash\chogath_square_0.png" />
+    <Resource Include="Resources\splash\corki_square_0.png" />
+    <Resource Include="Resources\splash\darius_square_0.png" />
+    <Resource Include="Resources\splash\default_square_0.png" />
+    <Resource Include="Resources\splash\diana_square_0.png" />
+    <Resource Include="Resources\splash\draven_square_0.png" />
+    <Resource Include="Resources\splash\drmundo_square_0.png" />
+    <Resource Include="Resources\splash\elise_square_0.png" />
+    <Resource Include="Resources\splash\evelynn_square_0.png" />
+    <Resource Include="Resources\splash\ezreal_square_0.png" />
+    <Resource Include="Resources\splash\fiddlesticks_square_0.png" />
+    <Resource Include="Resources\splash\fiora_square_0.png" />
+    <Resource Include="Resources\splash\fizz_square_0.png" />
+    <Resource Include="Resources\splash\galio_square_0.png" />
+    <Resource Include="Resources\splash\gangplank_square_0.png" />
+    <Resource Include="Resources\splash\garen_square_0.png" />
+    <Resource Include="Resources\splash\gragas_square_0.png" />
+    <Resource Include="Resources\splash\graves_square_0.png" />
+    <Resource Include="Resources\splash\hecarim_square_0.png" />
+    <Resource Include="Resources\splash\heimerdinger_square_0.png" />
+    <Resource Include="Resources\splash\irelia_square_0.png" />
+    <Resource Include="Resources\splash\janna_square_0.png" />
+    <Resource Include="Resources\splash\jarvaniv_square_0.png" />
+    <Resource Include="Resources\splash\jax_square_0.png" />
+    <Resource Include="Resources\splash\jayce_square_0.png" />
+    <Resource Include="Resources\splash\karma_square_0.png" />
+    <Resource Include="Resources\splash\karthus_square_0.png" />
+    <Resource Include="Resources\splash\kassadin_square_0.png" />
+    <Resource Include="Resources\splash\katarina_square_0.png" />
+    <Resource Include="Resources\splash\kayle_square_0.png" />
+    <Resource Include="Resources\splash\kennen_square_0.png" />
+    <Resource Include="Resources\splash\khazix_square_0.png" />
+    <Resource Include="Resources\splash\kogmaw_square_0.png" />
+    <Resource Include="Resources\splash\leblanc_square_0.png" />
+    <Resource Include="Resources\splash\leesin_square_0.png" />
+    <Resource Include="Resources\splash\leona_square_0.png" />
+    <Resource Include="Resources\splash\lissandra_square_0.png" />
+    <Resource Include="Resources\splash\lulu_square_0.png" />
+    <Resource Include="Resources\splash\lux_square_0.png" />
+    <Resource Include="Resources\splash\malphite_square_0.png" />
+    <Resource Include="Resources\splash\malzahar_square_0.png" />
+    <Resource Include="Resources\splash\maokai_square_0.png" />
+    <Resource Include="Resources\splash\masteryi_square_0.png" />
+    <Resource Include="Resources\splash\missfortune_square_0.png" />
+    <Resource Include="Resources\splash\mordekaiser_square_0.png" />
+    <Resource Include="Resources\splash\morgana_square_0.png" />
+    <Resource Include="Resources\splash\nami_square_0.png" />
+    <Resource Include="Resources\splash\nasus_square_0.png" />
+    <Resource Include="Resources\splash\nautilus_square_0.png" />
+    <Resource Include="Resources\splash\nidalee_square_0.png" />
+    <Resource Include="Resources\splash\nocturne_square_0.png" />
+    <Resource Include="Resources\splash\nunu_square_0.png" />
+    <Resource Include="Resources\splash\olaf_square_0.png" />
+    <Resource Include="Resources\splash\orianna_square_0.png" />
+    <Resource Include="Resources\splash\pantheon_square_0.png" />
+    <Resource Include="Resources\splash\poppy_square_0.png" />
+    <Resource Include="Resources\splash\quinn_square_0.png" />
+    <Resource Include="Resources\splash\rammus_square_0.png" />
+    <Resource Include="Resources\splash\renekton_square_0.png" />
+    <Resource Include="Resources\splash\rengar_square_0.png" />
+    <Resource Include="Resources\splash\riven_square_0.png" />
+    <Resource Include="Resources\splash\rumble_square_0.png" />
+    <Resource Include="Resources\splash\ryze_square_0.png" />
+    <Resource Include="Resources\splash\sejuani_square_0.png" />
+    <Resource Include="Resources\splash\shaco_square_0.png" />
+    <Resource Include="Resources\splash\shen_square_0.png" />
+    <Resource Include="Resources\splash\shyvana_square_0.png" />
+    <Resource Include="Resources\splash\singed_square_0.png" />
+    <Resource Include="Resources\splash\sion_square_0.png" />
+    <Resource Include="Resources\splash\sivir_square_0.png" />
+    <Resource Include="Resources\splash\skarner_square_0.png" />
+    <Resource Include="Resources\splash\sona_square_0.png" />
+    <Resource Include="Resources\splash\soraka_square_0.png" />
+    <Resource Include="Resources\splash\swain_square_0.png" />
+    <Resource Include="Resources\splash\syndra_square_0.png" />
+    <Resource Include="Resources\splash\talon_square_0.png" />
+    <Resource Include="Resources\splash\taric_square_0.png" />
+    <Resource Include="Resources\splash\teemo_square_0.png" />
+    <Resource Include="Resources\splash\thresh_square_0.png" />
+    <Resource Include="Resources\splash\tristana_square_0.png" />
+    <Resource Include="Resources\splash\trundle_square_0.png" />
+    <Resource Include="Resources\splash\tryndamere_square_0.png" />
+    <Resource Include="Resources\splash\twistedfate_square_0.png" />
+    <Resource Include="Resources\splash\twitch_square_0.png" />
+    <Resource Include="Resources\splash\udyr_square_0.png" />
+    <Resource Include="Resources\splash\urgot_square_0.png" />
+    <Resource Include="Resources\splash\varus_square_0.png" />
+    <Resource Include="Resources\splash\vayne_square_0.png" />
+    <Resource Include="Resources\splash\veigar_square_0.png" />
+    <Resource Include="Resources\splash\viktor_square_0.png" />
+    <Resource Include="Resources\splash\vi_square_0.png" />
+    <Resource Include="Resources\splash\vladimir_square_0.png" />
+    <Resource Include="Resources\splash\volibear_square_0.png" />
+    <Resource Include="Resources\splash\warwick_square_0.png" />
+    <Resource Include="Resources\splash\wukong_square_0.png" />
+    <Resource Include="Resources\splash\xerath_square_0.png" />
+    <Resource Include="Resources\splash\xinzhao_square_0.png" />
+    <Resource Include="Resources\splash\yorick_square_0.png" />
+    <Resource Include="Resources\splash\zac_square_0.png" />
+    <Resource Include="Resources\splash\zed_square_0.png" />
+    <Resource Include="Resources\splash\ziggs_square_0.png" />
+    <Resource Include="Resources\splash\zilean_square_0.png" />
+    <Resource Include="Resources\splash\zyra_square_0.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

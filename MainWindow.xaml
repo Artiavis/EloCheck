@@ -1,0 +1,95 @@
+﻿<Window x:Class="EloCheck.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Elocheck" Height="510" MaxHeight="510" MinHeight="510" Width="772"
+            MinWidth="772" MaxWidth="772">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="479" VerticalAlignment="Top" Width="764">
+            <TabItem Header="Game Lookup">
+                <Grid Background="#FFE5E5E5">
+                    <ComboBox HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+                        <ComboBoxItem Content="NA"/>
+                        <ComboBoxItem Content="EUW"/>
+                        <ComboBoxItem Content="EUNW"/>
+                    </ComboBox>
+                    <TextBox Margin="230,20,225,409">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Resources>
+                                    <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                        <VisualBrush.Visual>
+                                            <Label Content="  Enter Name Here" Foreground="LightGray" />
+                                            
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Style.Resources>
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter Property="Background" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <Button Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Summoner Lookup">
+                <Grid Background="#FFE5E5E5">
+                    <ComboBox HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+                        <ComboBoxItem Content="NA"/>
+                        <ComboBoxItem Content="EUW"/>
+                        <ComboBoxItem Content="EUNW"/>
+                    </ComboBox>
+                    <TextBox Margin="230,20,225,409">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <Style.Resources>
+                                    <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                        <VisualBrush.Visual>
+                                            <Label Content="  Enter Name Here" Foreground="LightGray" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Style.Resources>
+                                <Style.Triggers>
+                                    <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="Text" Value="{x:Null}">
+                                        <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                    </Trigger>
+                                    <Trigger Property="IsKeyboardFocused" Value="True">
+                                        <Setter Property="Background" Value="White" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                    <Button Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Settings" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" IsEnabled="False">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="About" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <Image HorizontalAlignment="Left" Height="149" Margin="552,46,0,0" VerticalAlignment="Top" Width="165" Source="pack://application:,,,/Resources/horse-tasatic.png"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="62,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="149" Width="299"><Run Text="Designed by Maz"/><LineBreak/><Run Text="twitter.com/Mazorlion"/><LineBreak/><Run Text="mazorlion@gmail.com"/><LineBreak/><Run/><LineBreak/><Run Text="Formerly powered by Java FX 2.2"/><LineBreak/><Run/><LineBreak/><Run Text="Champion splash art © Riot Games Inc."/></TextBlock>
+                    <Image HorizontalAlignment="Left" Height="149" Margin="551,240,0,0" VerticalAlignment="Top" Width="165" Source="pack://application:,,,/Resources/splash/nocturne_square_0.png"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="62,240,0,0" TextWrapping="Wrap" Text="Developed by Artiavis" VerticalAlignment="Top" Height="149" Width="299"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Admin" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" IsEnabled="False" >
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
