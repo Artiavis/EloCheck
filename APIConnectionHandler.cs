@@ -97,13 +97,15 @@ namespace EloCheck
             string result = api.ApiRequest("game", name, region);
         }
 
-        // TODO implement this
-        public void CompleteGameRequest(string title)
+        // TODO implement this using JsonSerializer.Deserialize and JReader
+        private GameStats CompleteGameRequest(string json)
         {
-
+            JsonSerializer ser = new JsonSerializer();
+            GameStats gameStats = ser.Deserialize<GameStats>(new JReader(new StringReader(json)));
+            return gameStats;
         }
 
-        private class PlayerStats
+        public class PlayerStats
         {
             bool Ranked { get; set; }
             Dictionary<String, Object> Ranked_Stats { get; set; }
@@ -115,6 +117,21 @@ namespace EloCheck
             string S1 { get; set; }
             string S2 { get; set; }
             string S3 { get; set; }
+        }
+
+        public class GameStats
+        {
+            string GameType { get; set; }
+            List<GamePlayer> Player_Team { get; set; }
+            List<GamePlayer> Enemy_Team { get; set; }
+
+            public class GamePlayer
+            {
+                string Champ { get; set; }
+                string Name { get; set; }
+                string Tier { get; set; }
+                string Division { get; set; }
+            }
         }
 
         /// <summary>
