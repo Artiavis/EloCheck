@@ -38,9 +38,10 @@ namespace EloCheck
         {
             try
             {
-                // TODO move the binding information over into a config file
-                IPAddress address = IPAddress.Parse("192.227.135.167");
-                IPEndPoint remoteEP = new IPEndPoint(address, 10807);
+                string ip = EloCheck.Properties.Settings.Default.IP;
+                int port = EloCheck.Properties.Settings.Default.Port;
+                IPAddress address = IPAddress.Parse(ip);
+                IPEndPoint remoteEP = new IPEndPoint(address, port);
 
                 clientSocket = new TcpClient();
                 clientSocket.Connect(remoteEP);
@@ -72,11 +73,12 @@ namespace EloCheck
                 // TODO why is this necessary?
                 sWriter.Write("");
                 sWriter.Flush();
-                string pswd = sReader.ReadLine();
-                if(!pswd.Equals("Connected. Enter Password."))
+                string pswdPrompt = sReader.ReadLine();
+                if(!pswdPrompt.Equals("Connected. Enter Password."))
                     return false;
                 // Send password to endpoint.
-                sWriter.WriteLine("PotatoLatkesAreTheBest");
+                string pswd = EloCheck.Properties.Settings.Default.Password;
+                sWriter.WriteLine(pswd);
                 sWriter.Flush();
 
                 // Read response
