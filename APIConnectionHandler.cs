@@ -105,6 +105,9 @@ namespace EloCheck
             return gameStats;
         }
 
+        /// <summary>
+        /// Represents a model of a player's statistics.
+        /// </summary>
         public class PlayerStats
         {
             bool Ranked { get; set; }
@@ -119,6 +122,9 @@ namespace EloCheck
             string S3 { get; set; }
         }
 
+        /// <summary>
+        /// Represents a model of a match's statistics.
+        /// </summary>
         public class GameStats
         {
             string GameType { get; set; }

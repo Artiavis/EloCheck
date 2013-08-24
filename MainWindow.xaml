@@ -1,8 +1,9 @@
 ﻿<Window x:Class="EloCheck.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Elocheck" Height="510" MaxHeight="510" MinHeight="510" Width="772"
-            MinWidth="772" MaxWidth="772">
+        xmlns:acc="clr-namespace:System.Windows.Controls;assembly=Accordion"
+        Title="EloCheck" Height="510" MaxHeight="510" MinHeight="510" Width="772"
+            MinWidth="772" MaxWidth="772" Icon="icon.ico">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="479" VerticalAlignment="Top" Width="764">
             <TabItem Header="Game Lookup">
@@ -37,7 +38,22 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <Button Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22"/>
+                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22" />
+                    <TextBlock HorizontalAlignment="Left" Margin="154,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="92,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="Player Team"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Margin="0,103,92,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="Player Team"/></TextBlock>
+                    <!-- Image group for Player Team-->
+                    <Image HorizontalAlignment="Left" Height="60" Margin="10,136,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image HorizontalAlignment="Left" Height="60" Margin="10,196,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image HorizontalAlignment="Left" Height="60" Margin="10,256,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image HorizontalAlignment="Left" Height="60" Margin="10,316,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image HorizontalAlignment="Left" Height="60" Margin="10,376,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <!-- Image group for Enemy Team-->
+                    <Image HorizontalAlignment="Left" Height="60" Margin="688,136,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image HorizontalAlignment="Left" Height="60" Margin="688,196,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image HorizontalAlignment="Left" Height="60" Margin="688,256,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image HorizontalAlignment="Left" Height="60" Margin="688,316,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image HorizontalAlignment="Left" Height="60" Margin="688,376,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Summoner Lookup">
@@ -71,7 +87,40 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <Button Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22"/>
+                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="154,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
+                    <acc:Accordion HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,146,0,0" Height="129" Width="445">
+                        <acc:AccordionItem Header="Season 1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" 
+                                  Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                                  Height="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                            </Grid>
+                        </acc:AccordionItem>
+                        <acc:AccordionItem Header="Season 2">
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" 
+                                  Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                                  Height="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                            </Grid>
+                        </acc:AccordionItem>
+                        <acc:AccordionItem Header="Season 3">
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" 
+                                  Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                                  Height="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                            </Grid>
+                        </acc:AccordionItem>
+                    </acc:Accordion>
+                    <TextBlock HorizontalAlignment="Left" Margin="302,79,0,0" TextWrapping="Wrap" Text="Champ Stats" VerticalAlignment="Top" Height="30" Width="119" TextDecorations="Underline" FontWeight="Bold" FontSize="20"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="92,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="48" FontSize="16"><Run FontWeight="Bold" Text="Name" Typography.Variants="Subscript"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="71,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.08,-1.25" Height="22" Width="91" FontSize="16"><Run FontWeight="Bold" Text="League Info"/></TextBlock>
+                    <Image HorizontalAlignment="Left" Height="132" Margin="51,309,0,0" VerticalAlignment="Top" Width="132" Source="pack://application:,,,/Resources/medals/challenger_1.png"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="188,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="T:"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="188,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="W:"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="188,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="L:"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="219,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run FontWeight="Bold" Text="0"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="219,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FF0A952A"><Run FontWeight="Bold" Text="0"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="219,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FFC10909"><Run FontWeight="Bold" Text="0"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="317,280,0,0" TextWrapping="Wrap" Text="Player Stats" VerticalAlignment="Top" Height="22" Width="92" TextDecorations="Underline" FontWeight="Bold" FontSize="16"/>
+                    <ScrollViewer HorizontalAlignment="Left" Height="362" Margin="492,79,0,0" VerticalAlignment="Top" Width="256"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Settings" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" IsEnabled="False">
