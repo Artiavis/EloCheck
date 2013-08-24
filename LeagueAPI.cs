@@ -14,7 +14,7 @@ namespace EloCheck
     ///   This class provides a socket connection to the
     ///   remote server.
     /// </summary
-    class LeagueAPI
+    class LeagueAPI : IDisposable
     {
         private TcpClient clientSocket;
         private StreamWriter sWriter;
@@ -129,12 +129,20 @@ namespace EloCheck
                 return null;
             }
         }
+
+        public virtual void Dispose()
+        {
+            sWriter.Dispose();
+            sReader.Dispose();
+            clientSocket.Close();
+        }
     }
 
     /// <summary>
     /// A class of exceptions indicating the server status
     /// is offline and therefore no meaningful data is returned
     /// </summary>
+    [Serializable]
     public class ConnectionOfflineException : Exception
     {
         public ConnectionOfflineException()

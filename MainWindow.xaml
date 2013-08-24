@@ -129,9 +129,9 @@
             <TabItem Header="About" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5">
                     <Image HorizontalAlignment="Left" Height="149" Margin="552,46,0,0" VerticalAlignment="Top" Width="165" Source="pack://application:,,,/Resources/horse-tasatic.png"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="62,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="149" Width="299"><Run Text="Designed by Maz"/><LineBreak/><Run Text="twitter.com/Mazorlion"/><LineBreak/><Run Text="mazorlion@gmail.com"/><LineBreak/><Run/><LineBreak/><Run Text="Formerly powered by Java FX 2.2"/><LineBreak/><Run/><LineBreak/><Run Text="Champion splash art © Riot Games Inc."/></TextBlock>
-                    <Image HorizontalAlignment="Left" Height="149" Margin="551,240,0,0" VerticalAlignment="Top" Width="165" Source="pack://application:,,,/Resources/splash/nocturne_square_0.png"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="62,240,0,0" TextWrapping="Wrap" Text="Developed by Artiavis" VerticalAlignment="Top" Height="149" Width="299"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="62,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="149" Width="299"><Run Text="Designed by Maz"/><LineBreak/><Run Text="twitter.com/Mazorlion"/><LineBreak/><Run Text="mazorlion@gmail.com"/><LineBreak/><Run/><LineBreak/><Run Text="Prototyped using Java FX 2.2"/><LineBreak/><Run/><LineBreak/><Run Text="Champion splash art © Riot Games Inc."/></TextBlock>
+                    <Image HorizontalAlignment="Left" Height="149" Margin="551,240,0,0" VerticalAlignment="Top" Width="165" Source="pack://application:,,,/Resources/shoesies.jpg"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="62,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="149" Width="299"><Run Text="Developed by Artiavis"/><Run Text=" using WPF and .NET 4.5"/><LineBreak/><Run/><LineBreak/><Run Text=""/></TextBlock>
 
                 </Grid>
             </TabItem>

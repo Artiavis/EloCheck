@@ -1053,6 +1053,16 @@ namespace EloCheck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shoesies {
+            get {
+                object obj = ResourceManager.GetObject("shoesies", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shyvana_square_0 {
             get {
                 object obj = ResourceManager.GetObject("shyvana_square_0", resourceCulture);
