@@ -14,7 +14,7 @@ namespace EloCheck
     class APIConnectionHandler
     {
 
-        public static APIConnectionHandler APIConnection
+        public static APIConnectionHandler Handler
         {
             get { return _conn; }
         }
@@ -29,6 +29,7 @@ namespace EloCheck
         {
             RankedChamps = new List<BitmapImage>();
             api = new LeagueAPI(IDENT);
+            
             IsConnected = api.Connect();
         }
 
@@ -38,13 +39,17 @@ namespace EloCheck
         /// <param name="name"></param>
         /// <param name="region"></param>
         /// <returns>Returns string containing response</returns>
-        public string RequestSummoner(string name, string region)
+        public PlayerStats SummonerRequest(string name, string region)
         {
-            // TODO perform this task using TPL
-            string result = api.ApiRequest("summoner", name, region);
-            // TODO make this processing a callback of the previous task
-            PlayerStats stats = CompleteSummonerRequest(result);
-            return result;
+            try
+            {
+                string result = api.ApiRequest("summoner", name, region);
+                return CompleteSummonerRequest(result);
+            }
+            catch (ConnectionOfflineException)
+            {
+                throw;
+            }
         }
 
         // TODO implement this using JsonSerializer.Deserialize and JReader
@@ -91,10 +96,17 @@ namespace EloCheck
             return false;
         }
 
-        public void GameRequest(string name, string region)
+        public GameStats GameRequest(string name, string region)
         {
-            // TODO make this request using TPL
-            string result = api.ApiRequest("game", name, region);
+            try
+            {
+                string result = api.ApiRequest("game", name, region);
+                return CompleteGameRequest(result);
+            }
+            catch (ConnectionOfflineException)
+            {
+                throw;
+            }
         }
 
         // TODO implement this using JsonSerializer.Deserialize and JReader
@@ -105,40 +117,6 @@ namespace EloCheck
             return gameStats;
         }
 
-        /// <summary>
-        /// Represents a model of a player's statistics.
-        /// </summary>
-        public class PlayerStats
-        {
-            bool Ranked { get; set; }
-            Dictionary<String, Object> Ranked_Stats { get; set; }
-            string Ranked_Champions { get; set; }
-            string Tier { get; set; }
-            string Division { get; set; }
-            int Wins { get; set; }
-            int Losses { get; set; }
-            string S1 { get; set; }
-            string S2 { get; set; }
-            string S3 { get; set; }
-        }
-
-        /// <summary>
-        /// Represents a model of a match's statistics.
-        /// </summary>
-        public class GameStats
-        {
-            string GameType { get; set; }
-            List<GamePlayer> Player_Team { get; set; }
-            List<GamePlayer> Enemy_Team { get; set; }
-
-            public class GamePlayer
-            {
-                string Champ { get; set; }
-                string Name { get; set; }
-                string Tier { get; set; }
-                string Division { get; set; }
-            }
-        }
 
         /// <summary>
         /// Extend the JsonTextReader class to provide a version
@@ -161,5 +139,40 @@ namespace EloCheck
             }
         }
 
+    }
+
+    /// <summary>
+    /// Represents a model of a player's statistics.
+    /// </summary>
+    public class PlayerStats
+    {
+        bool Ranked { get; set; }
+        Dictionary<String, Object> Ranked_Stats { get; set; }
+        string Ranked_Champions { get; set; }
+        string Tier { get; set; }
+        string Division { get; set; }
+        int Wins { get; set; }
+        int Losses { get; set; }
+        string S1 { get; set; }
+        string S2 { get; set; }
+        string S3 { get; set; }
+    }
+
+    /// <summary>
+    /// Represents a model of a match's statistics.
+    /// </summary>
+    public class GameStats
+    {
+        string GameType { get; set; }
+        List<GamePlayer> Player_Team { get; set; }
+        List<GamePlayer> Enemy_Team { get; set; }
+
+        public class GamePlayer
+        {
+            string Champ { get; set; }
+            string Name { get; set; }
+            string Tier { get; set; }
+            string Division { get; set; }
+        }
     }
 }

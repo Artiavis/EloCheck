@@ -8,12 +8,12 @@
         <TabControl HorizontalAlignment="Left" Height="479" VerticalAlignment="Top" Width="764">
             <TabItem Header="Game Lookup">
                 <Grid Background="#FFE5E5E5">
-                    <ComboBox HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+                    <ComboBox HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Name="GameRegion">
                         <ComboBoxItem Content="NA"/>
                         <ComboBoxItem Content="EUW"/>
                         <ComboBoxItem Content="EUNW"/>
                     </ComboBox>
-                    <TextBox Margin="230,20,225,409">
+                    <TextBox Margin="230,20,225,409" Name="GamePlayerName" Padding=".8">
                         <TextBox.Style>
                             <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                                 <Style.Resources>
@@ -38,8 +38,8 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22" />
-                    <TextBlock HorizontalAlignment="Left" Margin="154,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
+                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22" Name="GameSearch" Click="GameSearch_click"/>
+                    <TextBlock x:Name="GameLookupStatusBox" HorizontalAlignment="Left" Margin="154,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438" TextAlignment="Center"/>
                     <TextBlock HorizontalAlignment="Left" Margin="92,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="Player Team"/></TextBlock>
                     <TextBlock HorizontalAlignment="Right" Margin="0,103,92,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="Player Team"/></TextBlock>
                     <!-- Image group for Player Team-->
@@ -58,12 +58,12 @@
             </TabItem>
             <TabItem Header="Summoner Lookup">
                 <Grid Background="#FFE5E5E5">
-                    <ComboBox HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+                    <ComboBox HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Name="ChampionRegion">
                         <ComboBoxItem Content="NA"/>
                         <ComboBoxItem Content="EUW"/>
                         <ComboBoxItem Content="EUNW"/>
                     </ComboBox>
-                    <TextBox Margin="230,20,225,409">
+                    <TextBox Margin="230,20,225,409" Name="ChampionName"  Padding=".8">
                         <TextBox.Style>
                             <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                                 <Style.Resources>
@@ -87,8 +87,8 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="154,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438"/>
+                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22" Name="ChampSearch" Click="ChampSearch_click"/>
+                    <TextBlock x:Name="SummonerLookupStatusBox" HorizontalAlignment="Left" Margin="154,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438" TextAlignment="Center"/>
                     <acc:Accordion HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,146,0,0" Height="129" Width="445">
                         <acc:AccordionItem Header="Season 1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" 
