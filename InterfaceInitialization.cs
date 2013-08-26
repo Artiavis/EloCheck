@@ -32,7 +32,7 @@ namespace EloCheck
             else
             {
                 Title += " - Connection Failed";
-                EnableSearchButtons(SearchButtonList, false);
+                EnableSearch(false);
             }
         }
 
@@ -41,13 +41,16 @@ namespace EloCheck
         /// so that a new search cannot be launched while an existing
         /// search is in progress.
         /// </summary>
-        /// <param name="buttons">A list of Button objects to disable/enable</param>
         /// <param name="isEnabled">A boolean indicating whether to enable/disable</param>
-        private void EnableSearchButtons(List<Button> buttons, bool isEnabled)
+        private void EnableSearch(bool isEnabled)
         {
-            foreach (Button button in buttons)
+            foreach (Button button in SearchButtonList)
             {
                 button.IsEnabled = isEnabled;
+            }
+            foreach (TextBox box in SearchBoxList)
+            {
+                box.IsEnabled = isEnabled;
             }
             Mouse.OverrideCursor = isEnabled ? null : Cursors.Wait;
         }
@@ -59,6 +62,11 @@ namespace EloCheck
             listOfSearchButtons.Add(GameSearchButton);
             listOfSearchButtons.Add(SummonerSearchButton);
             SearchButtonList = listOfSearchButtons;
+
+            var listOfTextFields = new List<TextBox>();
+            listOfTextFields.Add(GamePlayerName);
+            listOfTextFields.Add(SummonerName);
+            SearchBoxList = listOfTextFields;
 
             // Make a list of team players
             var listOfPlayerViews = new List<GamePlayerView>();
@@ -134,9 +142,16 @@ namespace EloCheck
             public GamePlayerViewModel(GamePlayer player)
             {
                 Name = player.name;
-                string champ = player.champ.Replace(" ", string.Empty).ToLowerInvariant();
-                Portrait = new BitmapImage(new Uri(portraitURI + champ + "_square_0.png"));
-                string medal = player.tier + "_" + EloCheckUtility.RomanNumeralToInt(player.division);
+                if (player.champ != null)
+                {
+                    string champ = player.champ.Replace(" ", string.Empty).Replace("'", string.Empty).ToLowerInvariant();
+                    Portrait = new BitmapImage(new Uri(portraitURI + champ + "_square_0.png"));
+                }
+                else
+                    Portrait = null;
+
+                int div = EloCheckUtility.RomanNumeralToInt(player.division);
+                string medal = player.tier + (div == -1 ? "" : "_" + div);
                 DivisionMedal = new BitmapImage(new Uri(medalURI + medal + ".png"));
             }
 

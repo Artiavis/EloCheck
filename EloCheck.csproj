@@ -169,7 +169,6 @@
     <Resource Include="Resources\splash\brand_square_0.png" />
     <Resource Include="Resources\splash\caitlyn_square_0.png" />
     <Resource Include="Resources\splash\cassiopeia_square_0.png" />
-    <Resource Include="Resources\splash\chogath_square_0.png" />
     <Resource Include="Resources\splash\corki_square_0.png" />
     <Resource Include="Resources\splash\darius_square_0.png" />
     <Resource Include="Resources\splash\default_square_0.png" />
@@ -292,6 +291,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\shoesies.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splash\chogath_square_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\splash\aatrox_square_0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

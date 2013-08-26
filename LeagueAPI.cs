@@ -111,24 +111,26 @@ namespace EloCheck
                     result = sReader.ReadLine();
                 }
 
-                if (result.Equals(""))
-                    return null;
+                if (result != null && result.Equals(""))
+                    throw new BaseGameLookupException("{\"error\": \"No such game found.\"}");
                 else if (result.Contains("connection offline"))
-                {
                     throw new ConnectionOfflineException(result);
-                }
+                else if (result.Contains("not in game or active game"))
+                    throw new BaseGameLookupException(result);
+                else if (result.Contains("Summoner") && result.Contains("not found"))
+                    throw new BaseGameLookupException(result);
                 else
                     return result;
             }
-            catch (ConnectionOfflineException)
+            catch (BaseGameLookupException)
             {
                 // Rethrow exception to be handled in UI
                 throw;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 isConnected = false;
-                return null;
+                throw new ClientDisconnectedException(e.Message, e);
             }
         }
 
@@ -145,21 +147,27 @@ namespace EloCheck
     /// is offline and therefore no meaningful data is returned
     /// </summary>
     [Serializable]
-    public class ConnectionOfflineException : Exception
+    public class ConnectionOfflineException : BaseGameLookupException
     {
         public ConnectionOfflineException()
-        {
-
-        }
-
+        { }
         public ConnectionOfflineException(string message)
             : base(message)
-        {
-        }
-
+        {}
         public ConnectionOfflineException(string message, Exception inner)
             : base(message, inner)
-        {
-        }
+        {}
+    }
+
+    [Serializable]
+    public class ClientDisconnectedException : BaseGameLookupException
+    {
+        public ClientDisconnectedException()
+        { }
+        public ClientDisconnectedException(string message)
+            : base(message)
+        { }
+        public ClientDisconnectedException(string message, Exception inner)
+        { }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +23,11 @@ namespace EloCheck
     public partial class MainWindow : Window
     {
         private List<Button> SearchButtonList { get; set; }
+        private List<TextBox> SearchBoxList { get; set; }
         private List<GamePlayerView> PlayerViews { get; set; }
         private List<GamePlayerView> EnemyViews { get; set; }
         private APIConnectionHandler handler;
+        private static TextInfo textInfo = new CultureInfo("en-US").TextInfo;
 
         public MainWindow()
         {
@@ -38,8 +41,7 @@ namespace EloCheck
 
         private async void GameSearch()
         {
-            ClearGameView();
-            EnableSearchButtons(SearchButtonList, false);
+            EnableSearch(false);
             string region = GameRegion.Text;
             string name = GamePlayerName.Text;
             
@@ -47,7 +49,8 @@ namespace EloCheck
             try
             {
                 GameStats stats = await SearchGameStats(name, region);
-                GameLookupStatusBox.Text = stats.gameType;
+                ClearGameView();
+                GameLookupStatusBox.Text = textInfo.ToTitleCase(stats.gameType.Replace('_', ' '));
                 //stats.playerTeam.Zip(PlayerViews, (stat, view) =>
                 //    view.Load(new GamePlayerViewModel(stat))).AsParallel();
                 //stats.enemyTeam.Zip(EnemyViews, (stat, view) =>
@@ -58,15 +61,25 @@ namespace EloCheck
                     EnemyViews[i].Load(new GamePlayerViewModel(stats.enemyTeam[i]));
                 }
             }
-            catch (ConnectionOfflineException coe)
+            catch (ClientDisconnectedException cde)
+            {
+                GameLookupStatusBox.Text = cde.Message;
+                EnableSearch( false);
+
+            }
+            catch (BaseGameLookupException coe)
             {
                 string json = coe.Message;
                 JObject o = JObject.Parse(json);
-                string error = (string)o["Error"];
+                string error = (string)o["error"];
                 GameLookupStatusBox.Text = error;
             }
+            catch (Exception e)
+            {
+                GameLookupStatusBox.Text = e.Message;
+            }
 
-            EnableSearchButtons(SearchButtonList, true);
+            EnableSearch(true);
         }
 
         private void GameSearch_click(object sender, RoutedEventArgs e)
@@ -82,7 +95,7 @@ namespace EloCheck
                 {
                     return handler.GameRequest(name, region);
                 }
-                catch (ConnectionOfflineException)
+                catch (BaseGameLookupException)
                 {
                     throw;
                 }
@@ -111,7 +124,7 @@ namespace EloCheck
 
         private async void SummonerSearch()
         {
-            EnableSearchButtons(SearchButtonList, false);
+            EnableSearch( false);
             string region = SummonerRegion.Text;
             string name = SummonerName.Text;
             SummonerLookupStatusBox.Text = "";
@@ -128,7 +141,7 @@ namespace EloCheck
                 SummonerLookupStatusBox.Text = error;
             }
 
-            EnableSearchButtons(SearchButtonList, true);
+            EnableSearch( true);
         }
 
         private void imgSrc_update(object sender, DataTransferEventArgs e)

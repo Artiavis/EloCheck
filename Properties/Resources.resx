@@ -169,9 +169,6 @@
   <data name="challenger_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medals\challenger_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chogath_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\splash\chogath_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="corki_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\splash\corki_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -546,5 +543,8 @@
   </data>
   <data name="shoesies" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shoesies.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aatrox_square_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash\aatrox_square_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -44,7 +44,7 @@ namespace EloCheck
                 string result = api.ApiRequest("summoner", name, region);
                 return CompleteSummonerRequest(result);
             }
-            catch (ConnectionOfflineException)
+            catch (BaseGameLookupException)
             {
                 throw;
             }
@@ -98,7 +98,7 @@ namespace EloCheck
                 string result = api.ApiRequest("game", name, region);
                 return CompleteGameRequest(result);
             }
-            catch (ConnectionOfflineException)
+            catch (BaseGameLookupException)
             {
                 throw;
             }
@@ -186,5 +186,53 @@ namespace EloCheck
         public string division { get; set; }
         [JsonProperty]
         public int approxElo { get; set; }
+    }
+
+    /// <summary>
+    /// A generic exception indicating that game lookup failed somehow
+    /// </summary>
+    [Serializable]
+    public class BaseGameLookupException : Exception
+    {
+        public BaseGameLookupException()
+        { }
+        public BaseGameLookupException(string message)
+            : base(message)
+        { }
+        public BaseGameLookupException(string message, Exception inner)
+            : base(message, inner)
+        { }
+    }
+
+    /// <summary>
+    /// An exception indicating that no requested game exists
+    /// </summary>
+    [Serializable]
+    public class GameNotFoundException : BaseGameLookupException
+    {
+        public GameNotFoundException()
+        { }
+        public GameNotFoundException(string message)
+            : base(message)
+        { }
+        public GameNotFoundException(string message, Exception inner)
+            : base(message, inner)
+        { }
+    }
+
+    /// <summary>
+    /// An exception indicating that a given champion was not found
+    /// </summary>
+    [Serializable]
+    public class ChampionNotFoundException : Exception
+    {
+        public ChampionNotFoundException()
+        { }
+        public ChampionNotFoundException(string message)
+            : base(message)
+        { }
+        public ChampionNotFoundException(string message, Exception inner)
+            : base(message, inner)
+        { }
     }
 }

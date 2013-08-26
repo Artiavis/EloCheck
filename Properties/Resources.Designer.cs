@@ -63,6 +63,16 @@ namespace EloCheck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aatrox_square_0 {
+            get {
+                object obj = ResourceManager.GetObject("aatrox_square_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ahri_square_0 {
             get {
                 object obj = ResourceManager.GetObject("ahri_square_0", resourceCulture);
@@ -226,16 +236,6 @@ namespace EloCheck.Properties {
         internal static System.Drawing.Bitmap challenger_1 {
             get {
                 object obj = ResourceManager.GetObject("challenger_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap chogath_square_0 {
-            get {
-                object obj = ResourceManager.GetObject("chogath_square_0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
