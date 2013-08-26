@@ -10,7 +10,6 @@ namespace EloCheck
         public static string ToUpperCase(string input)
         {
             String output = "";
-            // TODO what is the point of this regex?
             input = Regex.Replace(input.ToLowerInvariant(),"[^A-Za-z]"," ");
             String[] words = input.Split(' ');
             foreach( String word in words) 

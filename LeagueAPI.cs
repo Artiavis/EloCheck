@@ -120,12 +120,12 @@ namespace EloCheck
                 else
                     return result;
             }
-            catch (ConnectionOfflineException coe)
+            catch (ConnectionOfflineException)
             {
                 // Rethrow exception to be handled in UI
                 throw;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 isConnected = false;
                 return null;

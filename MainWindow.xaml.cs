@@ -22,61 +22,23 @@ namespace EloCheck
     public partial class MainWindow : Window
     {
         private List<Button> SearchButtonList { get; set; }
+        private List<GamePlayerView> PlayerViews { get; set; }
+        private List<GamePlayerView> EnemyViews { get; set; }
         private APIConnectionHandler handler;
 
         public MainWindow()
         {
             InitializeComponent();
-            // Make a list of buttons to inactivate during blocking behavior
-            var listOfSearchButtons = new List<Button>();
-            
-            listOfSearchButtons.Add(GameSearch);
-            listOfSearchButtons.Add(ChampSearch);
-            SearchButtonList = listOfSearchButtons;
+            InitializeViewCollections();
+
             handler = APIConnectionHandler.Handler;
-
-
             // Indicate connection, if not then lock UI
             ConnectionResultUpdate(handler.IsConnected);
         }
 
-        /// <summary>
-        /// Update the UI to post a message indicating that the connection
-        /// either succeeded or failed. If it failed, lock search buttons.
-        /// </summary>
-        /// <param name="isConnected"></param>
-        private void ConnectionResultUpdate(bool isConnected)
+        private async void GameSearch()
         {
-            if (isConnected)
-            {
-                Title += " - Connection Succeeded";
-            }
-            else
-            {
-                Title += " - Connection Failed";
-                EnableSearchButtons(SearchButtonList, false);
-            }
-        }
-
-        /// <summary>
-        /// Function to disable/reenable the search buttons in the UI
-        /// so that a new search cannot be launched while an existing
-        /// search is in progress.
-        /// </summary>
-        /// <param name="buttons">A list of Button objects to disable/enable</param>
-        /// <param name="isEnabled">A boolean indicating whether to enable/disable</param>
-        private void EnableSearchButtons(List<Button> buttons, bool isEnabled)
-        {
-            foreach (Button button in buttons)
-            {
-                button.IsEnabled = isEnabled;
-            }
-            Mouse.OverrideCursor = isEnabled ? null : Cursors.Wait;
-        }
-
-        private async void GameSearch_click(object sender, RoutedEventArgs e)
-        {
-            GameLookupStatusBox.Text = "";
+            ClearGameView();
             EnableSearchButtons(SearchButtonList, false);
             string region = GameRegion.Text;
             string name = GamePlayerName.Text;
@@ -85,6 +47,16 @@ namespace EloCheck
             try
             {
                 GameStats stats = await SearchGameStats(name, region);
+                GameLookupStatusBox.Text = stats.gameType;
+                //stats.playerTeam.Zip(PlayerViews, (stat, view) =>
+                //    view.Load(new GamePlayerViewModel(stat))).AsParallel();
+                //stats.enemyTeam.Zip(EnemyViews, (stat, view) =>
+                //    view.Load(new GamePlayerViewModel(stat))).AsParallel();
+                for (int i = 0; i < stats.playerTeam.Count; i++)
+                {
+                    PlayerViews[i].Load(new GamePlayerViewModel(stats.playerTeam[i]));
+                    EnemyViews[i].Load(new GamePlayerViewModel(stats.enemyTeam[i]));
+                }
             }
             catch (ConnectionOfflineException coe)
             {
@@ -95,6 +67,11 @@ namespace EloCheck
             }
 
             EnableSearchButtons(SearchButtonList, true);
+        }
+
+        private void GameSearch_click(object sender, RoutedEventArgs e)
+        {
+            GameSearch();
         }
 
         private Task<GameStats> SearchGameStats(string name, string region)
@@ -127,11 +104,16 @@ namespace EloCheck
             });
         }
 
-        private async void ChampSearch_click(object sender, RoutedEventArgs e)
+        private void SummonerSearch_click(object sender, RoutedEventArgs e)
+        {
+            SummonerSearch();
+        }
+
+        private async void SummonerSearch()
         {
             EnableSearchButtons(SearchButtonList, false);
-            string region = ChampionRegion.Text;
-            string name = ChampionName.Text;
+            string region = SummonerRegion.Text;
+            string name = SummonerName.Text;
             SummonerLookupStatusBox.Text = "";
             // Do work asynchronously
             try
@@ -148,5 +130,34 @@ namespace EloCheck
 
             EnableSearchButtons(SearchButtonList, true);
         }
+
+        private void imgSrc_update(object sender, DataTransferEventArgs e)
+        {
+            if (e.Property == null)
+            {
+     
+            }
+            else
+            {
+
+            }
+        }
+
+        private void GamePlayerName_keydown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                GameSearch();
+            }
+        }
+
+        private void SummonerName_keydown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+
+            }
+        }
     }
+
 }

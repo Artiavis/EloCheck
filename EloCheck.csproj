@@ -89,6 +89,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EloCheckUtility.cs" />
+    <Compile Include="InterfaceInitialization.cs" />
     <Compile Include="LeagueAPI.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

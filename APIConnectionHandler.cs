@@ -23,11 +23,9 @@ namespace EloCheck
         public bool IsConnected { private set; get; }
         private const string IDENT = "BOBDOLEISMYHERO";
         private LeagueAPI api;
-        public List<BitmapImage> RankedChamps { get; private set; }
 
         public APIConnectionHandler()
         {
-            RankedChamps = new List<BitmapImage>();
             api = new LeagueAPI(IDENT);
             
             IsConnected = api.Connect();
@@ -52,7 +50,6 @@ namespace EloCheck
             }
         }
 
-        // TODO implement this using JsonSerializer.Deserialize and JReader
         private PlayerStats CompleteSummonerRequest(string json)
         {
             JsonSerializer ser = new JsonSerializer();
@@ -61,28 +58,26 @@ namespace EloCheck
             // TODO Implement Ranked Stats and Match History
         }
 
-        private void BuildChampions(string player, string json, string portraitsPath)
-        {
-            //        ScrollPane list = (ScrollPane) parent.lookup("#rankedChampList");
-            //        AnchorPane anchor = (AnchorPane)list.lookup("#rankedChampions");
-            RankedChamps.Clear();
-            if (json == null)
-                return;
-            String[] champions = json.Split('_');
-            // TODO sort array?
-            int numChamps = champions.Length;
+        //private void BuildChampions(string player, string json, string portraitsPath)
+        //{
+        //    //        ScrollPane list = (ScrollPane) parent.lookup("#rankedChampList");
+        //    //        AnchorPane anchor = (AnchorPane)list.lookup("#rankedChampions");
+        //    if (json == null)
+        //        return;
+        //    String[] champions = json.Split('_');
+        //    // TODO sort array?
+        //    int numChamps = champions.Length;
 
-            // rankedChampClicked ??
-            int i = 0, k = 0;
-            for (; i < numChamps; i++)
-            {
-                string lCaseName = Regex.Replace(champions[i], "[^A-Za-z]", "").ToLowerInvariant();
-                portraitsPath += lCaseName + "_square_0.png";
-                Uri uri = new Uri(portraitsPath);
-                BitmapImage portrait = new BitmapImage(uri);
-                RankedChamps.Add(portrait);
-            }
-        }
+        //    // rankedChampClicked ??
+        //    int i = 0, k = 0;
+        //    for (; i < numChamps; i++)
+        //    {
+        //        string lCaseName = Regex.Replace(champions[i], "[^A-Za-z]", "").ToLowerInvariant();
+        //        portraitsPath += lCaseName + "_square_0.png";
+        //        Uri uri = new Uri(portraitsPath);
+        //        BitmapImage portrait = new BitmapImage(uri);
+        //    }
+        //}
 
         public bool StatsReqeust(string name, string region)
         {
@@ -109,7 +104,6 @@ namespace EloCheck
             }
         }
 
-        // TODO implement this using JsonSerializer.Deserialize and JReader
         private GameStats CompleteGameRequest(string json)
         {
             JsonSerializer ser = new JsonSerializer();
@@ -138,24 +132,33 @@ namespace EloCheck
                 return b;
             }
         }
-
     }
+
+    // the API uses camelcase and the data mapper relies on property names
 
     /// <summary>
     /// Represents a model of a player's statistics.
     /// </summary>
     public class PlayerStats
     {
-        bool Ranked { get; set; }
-        Dictionary<String, Object> Ranked_Stats { get; set; }
-        string Ranked_Champions { get; set; }
-        string Tier { get; set; }
-        string Division { get; set; }
-        int Wins { get; set; }
-        int Losses { get; set; }
-        string S1 { get; set; }
-        string S2 { get; set; }
-        string S3 { get; set; }
+        [JsonProperty]
+        public bool ranked { get; set; }
+        [JsonProperty]
+        public Dictionary<string, int> rankedStats { get; set; }
+        [JsonProperty]
+        public string rankedChampions { get; set; }
+        [JsonProperty]
+        public string tier { get; set; }
+        [JsonProperty]
+        public string division { get; set; }
+        [JsonProperty]
+        public int wins { get; set; }
+        [JsonProperty]
+        public int losses { get; set; }
+        [JsonProperty]
+        public string s1 { get; set; }
+        [JsonProperty]
+        public string s2 { get; set; }
     }
 
     /// <summary>
@@ -163,16 +166,25 @@ namespace EloCheck
     /// </summary>
     public class GameStats
     {
-        string GameType { get; set; }
-        List<GamePlayer> Player_Team { get; set; }
-        List<GamePlayer> Enemy_Team { get; set; }
+        [JsonProperty]
+        public string gameType { get; set; }
+        [JsonProperty]
+        public List<GamePlayer> playerTeam { get; set; }
+        [JsonProperty]
+        public List<GamePlayer> enemyTeam { get; set; }
+    }
 
-        public class GamePlayer
-        {
-            string Champ { get; set; }
-            string Name { get; set; }
-            string Tier { get; set; }
-            string Division { get; set; }
-        }
+    public class GamePlayer
+    {
+        [JsonProperty]
+        public string champ { get; set; }
+        [JsonProperty]
+        public string name { get; set; }
+        [JsonProperty]
+        public string tier { get; set; }
+        [JsonProperty]
+        public string division { get; set; }
+        [JsonProperty]
+        public int approxElo { get; set; }
     }
 }

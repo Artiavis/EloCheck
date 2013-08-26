@@ -11,9 +11,9 @@
                     <ComboBox HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Name="GameRegion">
                         <ComboBoxItem Content="NA"/>
                         <ComboBoxItem Content="EUW"/>
-                        <ComboBoxItem Content="EUNW"/>
+                        <ComboBoxItem Content="EUNE"/>
                     </ComboBox>
-                    <TextBox Margin="230,20,225,409" Name="GamePlayerName" Padding=".8">
+                    <TextBox Margin="230,20,225,409" Name="GamePlayerName" Padding=".8" KeyDown="GamePlayerName_keydown">
                         <TextBox.Style>
                             <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                                 <Style.Resources>
@@ -38,32 +38,79 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22" Name="GameSearch" Click="GameSearch_click"/>
+                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22" x:Name="GameSearchButton" Click="GameSearch_click"/>
                     <TextBlock x:Name="GameLookupStatusBox" HorizontalAlignment="Left" Margin="154,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438" TextAlignment="Center"/>
                     <TextBlock HorizontalAlignment="Left" Margin="92,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="Player Team"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Right" Margin="0,103,92,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="Player Team"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Right" Margin="0,103,92,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="Enemy Team"/></TextBlock>
+
                     <!-- Image group for Player Team-->
-                    <Image HorizontalAlignment="Left" Height="60" Margin="10,136,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
-                    <Image HorizontalAlignment="Left" Height="60" Margin="10,196,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
-                    <Image HorizontalAlignment="Left" Height="60" Margin="10,256,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
-                    <Image HorizontalAlignment="Left" Height="60" Margin="10,316,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
-                    <Image HorizontalAlignment="Left" Height="60" Margin="10,376,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="PlayerImage1" HorizontalAlignment="Left" Height="60" Margin="10,136,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="PlayerImage2" HorizontalAlignment="Left" Height="60" Margin="10,196,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="PlayerImage3" HorizontalAlignment="Left" Height="60" Margin="10,256,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="PlayerImage4" HorizontalAlignment="Left" Height="60" Margin="10,316,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="PlayerImage5" HorizontalAlignment="Left" Height="60" Margin="10,376,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+
                     <!-- Image group for Enemy Team-->
-                    <Image HorizontalAlignment="Left" Height="60" Margin="688,136,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
-                    <Image HorizontalAlignment="Left" Height="60" Margin="688,196,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
-                    <Image HorizontalAlignment="Left" Height="60" Margin="688,256,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
-                    <Image HorizontalAlignment="Left" Height="60" Margin="688,316,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
-                    <Image HorizontalAlignment="Left" Height="60" Margin="688,376,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="EnemyImage1" HorizontalAlignment="Left" Height="60" Margin="688,136,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="EnemyImage2" HorizontalAlignment="Left" Height="60" Margin="688,196,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="EnemyImage3" HorizontalAlignment="Left" Height="60" Margin="688,256,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="EnemyImage4" HorizontalAlignment="Left" Height="60" Margin="688,316,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="EnemyImage5" HorizontalAlignment="Left" Height="60" Margin="688,376,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+
+                    <!-- Name Group for player team-->
+                    <TextBlock Name="PlayerName1" HorizontalAlignment="Left" Margin="92,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+                    <TextBlock Name="PlayerName2" HorizontalAlignment="Left" Margin="92,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+                    <TextBlock Name="PlayerName3" HorizontalAlignment="Left" Margin="92,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+                    <TextBlock Name="PlayerName4" HorizontalAlignment="Left" Margin="92,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+                    <TextBlock Name="PlayerName5" HorizontalAlignment="Left" Margin="92,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+
+                    <!-- Name for Enemy Team-->
+                    <TextBlock Name="EnemyName1" HorizontalAlignment="Right" Margin="0,154,92,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+                    <TextBlock Name="EnemyName2" HorizontalAlignment="Right" Margin="0,214,92,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+                    <TextBlock Name="EnemyName3" HorizontalAlignment="Right" Margin="0,274,92,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+                    <TextBlock Name="EnemyName4" HorizontalAlignment="Right" Margin="0,334,92,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+                    <TextBlock Name="EnemyName5" HorizontalAlignment="Right" Margin="0,394,92,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
+                    
+                    <!-- Division Medal for Player Team -->
+                    <Image Name="PlayerDiv1" HorizontalAlignment="Left" Height="60" Margin="290,136,0,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <Image Name="PlayerDiv2" HorizontalAlignment="Left" Height="60" Margin="290,196,0,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <Image Name="PlayerDiv3" HorizontalAlignment="Left" Height="60" Margin="290,256,0,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <Image Name="PlayerDiv4" HorizontalAlignment="Left" Height="60" Margin="290,316,0,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <Image Name="PlayerDiv5" HorizontalAlignment="Left" Height="60" Margin="290,376,0,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <!-- Division Medal for Enemy Team -->
+                    <Image Name="EnemyDiv1" HorizontalAlignment="Right" Height="60" Margin="0,136,290,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <Image Name="EnemyDiv2" HorizontalAlignment="Right" Height="60" Margin="0,196,290,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <Image Name="EnemyDiv3" HorizontalAlignment="Right" Height="60" Margin="0,256,290,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <Image Name="EnemyDiv4" HorizontalAlignment="Right" Height="60" Margin="0,316,290,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <Image Name="EnemyDiv5" HorizontalAlignment="Right" Height="60" Margin="0,376,290,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
+                    <!-- Separators -->
+                    <Separator HorizontalAlignment="Stretch" Height="8" Margin="207,0,207,168" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Background="LightGray">
+                        <Separator.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Separator.RenderTransform>
+                    </Separator>
+                    <Separator HorizontalAlignment="Left" Height="11" Margin="70,131,0,0" VerticalAlignment="Top" Width="618" Background="LightGray"/>
+                    <Separator HorizontalAlignment="Left" Height="7" Margin="70,191,0,0" VerticalAlignment="Top" Width="618" Background="LightGray"/>
+                    <Separator HorizontalAlignment="Left" Height="6" Margin="70,251,0,0" VerticalAlignment="Top" Width="618" Background="LightGray"/>
+                    <Separator HorizontalAlignment="Left" Height="9" Margin="70,311,0,0" VerticalAlignment="Top" Width="618" Background="LightGray"/>
+                    <Separator HorizontalAlignment="Left" Height="6" Margin="70,371,0,0" VerticalAlignment="Top" Width="618" Background="LightGray"/>
+
+
                 </Grid>
             </TabItem>
             <TabItem Header="Summoner Lookup">
                 <Grid Background="#FFE5E5E5">
-                    <ComboBox HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" Name="ChampionRegion">
+                    <ComboBox HorizontalAlignment="Left" Margin="92,20,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" x:Name="SummonerRegion">
                         <ComboBoxItem Content="NA"/>
                         <ComboBoxItem Content="EUW"/>
-                        <ComboBoxItem Content="EUNW"/>
+                        <ComboBoxItem Content="EUNE"/>
                     </ComboBox>
-                    <TextBox Margin="230,20,225,409" Name="ChampionName"  Padding=".8">
+                    <TextBox Margin="230,20,225,409" x:Name="SummonerName"  Padding=".8" KeyDown="SummonerName_keydown">
                         <TextBox.Style>
                             <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                                 <Style.Resources>
@@ -87,7 +134,7 @@
                             </Style>
                         </TextBox.Style>
                     </TextBox>
-                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22" Name="ChampSearch" Click="ChampSearch_click"/>
+                    <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22" x:Name="SummonerSearchButton" Click="SummonerSearch_click"/>
                     <TextBlock x:Name="SummonerLookupStatusBox" HorizontalAlignment="Left" Margin="154,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438" TextAlignment="Center"/>
                     <acc:Accordion HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,146,0,0" Height="129" Width="445">
                         <acc:AccordionItem Header="Season 1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
