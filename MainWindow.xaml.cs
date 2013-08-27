@@ -26,6 +26,7 @@ namespace EloCheck
         private List<TextBox> SearchBoxList { get; set; }
         private List<GamePlayerView> PlayerViews { get; set; }
         private List<GamePlayerView> EnemyViews { get; set; }
+        private PlayerStatsView playerStatsView;
         private APIConnectionHandler handler;
         private static TextInfo textInfo = new CultureInfo("en-US").TextInfo;
 
@@ -67,9 +68,9 @@ namespace EloCheck
                 EnableSearch( false);
 
             }
-            catch (BaseGameLookupException coe)
+            catch (BaseGameLookupException bglue)
             {
-                string json = coe.Message;
+                string json = bglue.Message;
                 JObject o = JObject.Parse(json);
                 string error = (string)o["error"];
                 GameLookupStatusBox.Text = error;
@@ -132,13 +133,23 @@ namespace EloCheck
             try
             {
                 PlayerStats stats = await SearchPlayerStats(name, region);
+                playerStatsView.Load(new PlayerStatsViewModel(stats));
             }
-            catch (ConnectionOfflineException coe)
+            catch (ClientDisconnectedException cde)
             {
-                string json = coe.Message;
+                SummonerLookupStatusBox.Text = cde.Message;
+                EnableSearch(false);
+            }
+            catch (BaseGameLookupException bglue)
+            {
+                string json = bglue.Message;
                 JObject o = JObject.Parse(json);
                 string error = (string)o["Error"];
                 SummonerLookupStatusBox.Text = error;
+            }
+            catch (Exception e)
+            {
+                GameLookupStatusBox.Text = e.Message;
             }
 
             EnableSearch( true);
@@ -168,7 +179,7 @@ namespace EloCheck
         {
             if (e.Key == Key.Return)
             {
-
+                SummonerSearch();
             }
         }
     }

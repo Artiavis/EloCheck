@@ -58,27 +58,6 @@ namespace EloCheck
             // TODO Implement Ranked Stats and Match History
         }
 
-        //private void BuildChampions(string player, string json, string portraitsPath)
-        //{
-        //    //        ScrollPane list = (ScrollPane) parent.lookup("#rankedChampList");
-        //    //        AnchorPane anchor = (AnchorPane)list.lookup("#rankedChampions");
-        //    if (json == null)
-        //        return;
-        //    String[] champions = json.Split('_');
-        //    // TODO sort array?
-        //    int numChamps = champions.Length;
-
-        //    // rankedChampClicked ??
-        //    int i = 0, k = 0;
-        //    for (; i < numChamps; i++)
-        //    {
-        //        string lCaseName = Regex.Replace(champions[i], "[^A-Za-z]", "").ToLowerInvariant();
-        //        portraitsPath += lCaseName + "_square_0.png";
-        //        Uri uri = new Uri(portraitsPath);
-        //        BitmapImage portrait = new BitmapImage(uri);
-        //    }
-        //}
-
         public bool StatsReqeust(string name, string region)
         {
             // TODO implement stats request
@@ -141,6 +120,8 @@ namespace EloCheck
     /// </summary>
     public class PlayerStats
     {
+        [JsonProperty]
+        public string player { get; set; }
         [JsonProperty]
         public bool ranked { get; set; }
         [JsonProperty]

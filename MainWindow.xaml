@@ -50,8 +50,13 @@
                     <Image x:Name="PlayerImage4" HorizontalAlignment="Left" Height="60" Margin="10,316,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
                     <Image x:Name="PlayerImage5" HorizontalAlignment="Left" Height="60" Margin="10,376,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
 
+                    <Popup Name="myPopup" IsOpen="False" PlacementTarget="{Binding ElementName=EnemyImage1}" StaysOpen="True">
+                        <Label Name="myLabel" Content="This is a popup!" Background="AliceBlue" Foreground="Blue"/>
+                    </Popup>
+
                     <!-- Image group for Enemy Team-->
-                    <Image x:Name="EnemyImage1" HorizontalAlignment="Left" Height="60" Margin="688,136,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
+                    <Image x:Name="EnemyImage1" HorizontalAlignment="Left" Height="60" Margin="688,136,0,0" VerticalAlignment="Top" Width="60" 
+                           Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
                     <Image x:Name="EnemyImage2" HorizontalAlignment="Left" Height="60" Margin="688,196,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
                     <Image x:Name="EnemyImage3" HorizontalAlignment="Left" Height="60" Margin="688,256,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
                     <Image x:Name="EnemyImage4" HorizontalAlignment="Left" Height="60" Margin="688,316,0,0" VerticalAlignment="Top" Width="60" Source="pack://application:,,,/Resources/splash/default_square_0.png"/>
@@ -136,6 +141,7 @@
                     </TextBox>
                     <Button Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="553,20,0,0" Height="22" x:Name="SummonerSearchButton" Click="SummonerSearch_click"/>
                     <TextBlock x:Name="SummonerLookupStatusBox" HorizontalAlignment="Left" Margin="154,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="438" TextAlignment="Center"/>
+                    <!--
                     <acc:Accordion HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,146,0,0" Height="129" Width="445">
                         <acc:AccordionItem Header="Season 1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White" 
@@ -156,18 +162,27 @@
                             </Grid>
                         </acc:AccordionItem>
                     </acc:Accordion>
+                    -->
                     <TextBlock HorizontalAlignment="Left" Margin="302,79,0,0" TextWrapping="Wrap" Text="Champ Stats" VerticalAlignment="Top" Height="30" Width="119" TextDecorations="Underline" FontWeight="Bold" FontSize="20"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="92,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="48" FontSize="16"><Run FontWeight="Bold" Text="Name" Typography.Variants="Subscript"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="71,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.08,-1.25" Height="22" Width="91" FontSize="16"><Run FontWeight="Bold" Text="League Info"/></TextBlock>
-                    <Image HorizontalAlignment="Left" Height="132" Margin="51,309,0,0" VerticalAlignment="Top" Width="132" Source="pack://application:,,,/Resources/medals/challenger_1.png"/>
+                    <TextBlock Name="SummonerNameBlock" Text="Name" HorizontalAlignment="Left" Margin="18,121,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="190" FontSize="16" FontWeight="Bold"/>
+                    <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="71,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.08,-1.25" Height="22" Width="91" FontSize="16"><Run FontWeight="Bold" Text="League Info"/></TextBlock>
+                    <Image Name="Season3Medal" HorizontalAlignment="Left" Height="132" Margin="51,309,0,0" VerticalAlignment="Top" Width="132" Source="pack://application:,,,/Resources/medals/challenger_1.png"/>
                     <TextBlock HorizontalAlignment="Left" Margin="188,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="T:"/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="188,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="W:"/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="188,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="L:"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="219,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run FontWeight="Bold" Text="0"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="219,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FF0A952A"><Run FontWeight="Bold" Text="0"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="219,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FFC10909"><Run FontWeight="Bold" Text="0"/></TextBlock>
+                    <TextBlock Name="TotalGamesBox" HorizontalAlignment="Left" Margin="219,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run FontWeight="Bold" Text="0"/></TextBlock>
+                    <TextBlock Name="TotalWinsBox" HorizontalAlignment="Left" Margin="219,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FF0A952A"><Run FontWeight="Bold" Text="0"/></TextBlock>
+                    <TextBlock Name="TotalLossesBox" HorizontalAlignment="Left" Margin="219,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FFC10909"><Run FontWeight="Bold" Text="0"/></TextBlock>
                     <TextBlock HorizontalAlignment="Left" Margin="317,280,0,0" TextWrapping="Wrap" Text="Player Stats" VerticalAlignment="Top" Height="22" Width="92" TextDecorations="Underline" FontWeight="Bold" FontSize="16"/>
                     <ScrollViewer HorizontalAlignment="Left" Height="362" Margin="492,79,0,0" VerticalAlignment="Top" Width="256"/>
+                    <StackPanel HorizontalAlignment="Left" Height="100" Margin="18,161,0,0" VerticalAlignment="Top" Width="100">
+                        <Image Name="Season1Medal" Height="80" Source="pack://application:,,,/Resources/medals/unranked.png"/>
+                        <TextBlock TextAlignment="Center" FontSize="12" FontWeight="Bold" Text="Season 1" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left" Height="100" Margin="108,161,0,0" VerticalAlignment="Top" Width="100">
+                        <Image Name="Season2Medal" Height="80" Source="pack://application:,,,/Resources/medals/unranked.png"/>
+                        <TextBlock TextAlignment="Center" FontSize="12" FontWeight="Bold" Text="Season 2" />
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem Header="Settings" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" IsEnabled="False">

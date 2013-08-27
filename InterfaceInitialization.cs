@@ -84,6 +84,8 @@ namespace EloCheck
             listOfEnemyViews.Add(new GamePlayerView(EnemyImage4, EnemyName4, EnemyDiv4));
             listOfEnemyViews.Add(new GamePlayerView(EnemyImage5, EnemyName5, EnemyDiv5));
             EnemyViews = listOfEnemyViews;
+
+            playerStatsView = new PlayerStatsView(SummonerNameBlock, Season1Medal, Season2Medal, Season3Medal);
         }
 
         private void ClearGameView()
@@ -101,64 +103,6 @@ namespace EloCheck
             }
         }
 
-        /// <summary>
-        /// A view encapsulating a game player's display controls.
-        /// </summary>
-        private class GamePlayerView
-        {
-            private static BitmapImage img = new BitmapImage(
-                new Uri("pack://application:,,,/Resources/splash/default_square_0.png"));
-            public GamePlayerView(Image img, TextBlock name, Image div)
-            {
-                Portrait = img;
-                Name = name;
-                Division = div;
-            }
-            public Image Portrait { get; set; }
-            public TextBlock Name { get; set; }
-            public Image Division { get; set; }
 
-            public void ClearView()
-            {
-                Portrait.SetCurrentValue(Image.SourceProperty, img);
-                Name.Text = "";
-                Division.SetCurrentValue(Image.SourceProperty, null);
-            }
-
-            public GamePlayerView Load(GamePlayerViewModel vm)
-            {
-                Portrait.SetCurrentValue(Image.SourceProperty, vm.Portrait);
-                Division.SetCurrentValue(Image.SourceProperty, vm.DivisionMedal);
-                Name.Text = vm.Name;
-                return this;
-            }
-        }
-
-        private class GamePlayerViewModel
-        {
-            private static string portraitURI = "pack://application:,,,/Resources/splash/";
-            private static string medalURI = "pack://application:,,,/Resources/medals/";
-
-            public GamePlayerViewModel(GamePlayer player)
-            {
-                Name = player.name;
-                if (player.champ != null)
-                {
-                    string champ = player.champ.Replace(" ", string.Empty).Replace("'", string.Empty).ToLowerInvariant();
-                    Portrait = new BitmapImage(new Uri(portraitURI + champ + "_square_0.png"));
-                }
-                else
-                    Portrait = null;
-
-                int div = EloCheckUtility.RomanNumeralToInt(player.division);
-                string medal = player.tier + (div == -1 ? "" : "_" + div);
-                DivisionMedal = new BitmapImage(new Uri(medalURI + medal + ".png"));
-            }
-
-            public BitmapImage Portrait { get; private set; }
-            public BitmapImage DivisionMedal { get; private set; }
-            public string Name { get; private set; }
-
-        }
     }
 }
