@@ -83,12 +83,18 @@ namespace EloCheck
         private class PlayerStatsView
         {
             public PlayerStatsView(TextBlock name, Image s1medal, Image s2medal, 
-                Image s3medal)
+                Image s3medal, TextBlock tierDiv, TextBlock games, TextBlock wins,
+                TextBlock losses, DataGrid grid)
             {
                 Name = name;
                 S1Medal = s1medal;
                 S2Medal = s2medal;
                 S3Medal = s3medal;
+                TierDivision = tierDiv;
+                TotalGames = games;
+                TotalWins = wins;
+                TotalLosses = losses;
+                PlayerData = grid;
             }
 
             public PlayerStatsView Load(PlayerStatsViewModel vm)
@@ -97,6 +103,13 @@ namespace EloCheck
                 S1Medal.SetCurrentValue(Image.SourceProperty, vm.S1Medal);
                 S2Medal.SetCurrentValue(Image.SourceProperty, vm.S2Medal);
                 S3Medal.SetCurrentValue(Image.SourceProperty, vm.S3Medal);
+                TierDivision.Text = vm.Tier + " " + vm.Division;
+                TotalGames.Text = (vm.Wins + vm.Losses).ToString();
+                TotalWins.Text = vm.Wins.ToString();
+                TotalLosses.Text = vm.Losses.ToString();
+
+                PlayerData.ItemsSource = vm.RankedStats;
+                
                 return this;
             }
 
@@ -104,7 +117,11 @@ namespace EloCheck
             public Image S1Medal { get; set; }
             public Image S2Medal { get; set; }
             public Image S3Medal { get; set; }
-
+            public TextBlock TierDivision { get; set; }
+            public TextBlock TotalGames { get; set; }
+            public TextBlock TotalWins { get; set; }
+            public TextBlock TotalLosses { get; set; }
+            public DataGrid PlayerData { get; set; }
         }
 
         /// <summary>
@@ -126,6 +143,11 @@ namespace EloCheck
                 S1Medal = FindLegacyMedal(pstats.s1);
                 S2Medal = FindLegacyMedal(pstats.s2);
                 Name = pstats.player;
+                Wins = pstats.wins;
+                Losses = pstats.losses;
+
+                RankedStats = pstats.rankedStats.Select((kv) =>
+                                new Stats(kv)).ToList();
             }
 
             private BitmapImage FindLegacyMedal(string tier)
@@ -147,9 +169,20 @@ namespace EloCheck
                 }
             }
 
+            private Dictionary<string, int> NormalizeRankedStats(Dictionary<string, int> stats)
+            {
+                var newStats = new Dictionary<string, int>();
+                foreach(KeyValuePair<string, int> entry in stats)
+                {
+                    string key = entry.Key.Replace('_', ' ').ToLowerInvariant();
+                    newStats.Add(textInfo.ToTitleCase(key), entry.Value);
+                }
+                return newStats;
+            }
+
             public bool Ranked { get; set; }
             public string Name { get; set; }
-            public Dictionary<string, int> RankedStats { get; set; }
+            public List<Stats> RankedStats { get; set; }
             public List<BitmapImage> RankedChampions { get; set; }
             public string Tier { get; set; }
             public string Division { get; set; }
@@ -158,6 +191,20 @@ namespace EloCheck
             public BitmapImage S1Medal { get; set; }
             public BitmapImage S2Medal { get; set; }
             public BitmapImage S3Medal { get; set; }
+
+            public class Stats
+            {
+                public Stats(KeyValuePair<string, int> pair)
+                {
+                    Count = pair.Value;
+                    string stat = pair.Key.Replace('_', ' ').ToLowerInvariant();
+                    Statistic = textInfo.ToTitleCase(stat);
+                }
+
+                public string Statistic { get; set; }
+                public int Count { get; set; }
+
+            }
         }
     }
 }

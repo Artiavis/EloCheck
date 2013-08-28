@@ -513,6 +513,16 @@ namespace EloCheck.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap green_check {
+            get {
+                object obj = ResourceManager.GetObject("green_check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hecarim_square_0 {
             get {
                 object obj = ResourceManager.GetObject("hecarim_square_0", resourceCulture);
@@ -966,6 +976,16 @@ namespace EloCheck.Properties {
         internal static System.Drawing.Bitmap rammus_square_0 {
             get {
                 object obj = ResourceManager.GetObject("rammus_square_0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap red_x {
+            get {
+                object obj = ResourceManager.GetObject("red_x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Ookii.Dialogs.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -144,7 +146,7 @@ namespace EloCheck
             {
                 string json = bglue.Message;
                 JObject o = JObject.Parse(json);
-                string error = (string)o["Error"];
+                string error = (string)o["error"];
                 SummonerLookupStatusBox.Text = error;
             }
             catch (Exception e)
@@ -182,6 +184,35 @@ namespace EloCheck
                 SummonerSearch();
             }
         }
+
+        private void fillPath_click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new System.Windows.Forms.FolderBrowserDialog();
+            dialog.ShowDialog();
+            bool found = false;
+
+            try
+            {
+                var dir = new DirectoryInfo(dialog.SelectedPath);
+                DirectoryInfo[] subDirs = dir.GetDirectories();
+                foreach (DirectoryInfo di in subDirs)
+                {
+                    FileInfo[] files = di.GetFiles(".exe");
+                    var results = files.Where(f => f.Name.Contains("launcher")).ToArray();
+                    if (results.Length > 0)
+                        found = true;
+                }
+            }
+            catch (UnauthorizedAccessException uae)
+            {
+                MessageBox.Show(uae.Message);
+            }
+
+            if (found)
+                MessageBox.Show("Found!");
+            LeagueInstallFolder.Text = dialog.SelectedPath;
+        }
+
     }
 
 }

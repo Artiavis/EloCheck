@@ -49,5 +49,17 @@ namespace EloCheck.Properties {
                 return ((string)(this["Password"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LOLPath {
+            get {
+                return ((string)(this["LOLPath"]));
+            }
+            set {
+                this["LOLPath"] = value;
+            }
+        }
     }
 }

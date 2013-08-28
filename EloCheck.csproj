@@ -58,6 +58,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Ookii.Dialogs.Wpf">
+      <HintPath>..\packages\Ookii.Dialogs.1.0\lib\net35\Ookii.Dialogs.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -298,6 +301,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\splash\aatrox_square_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

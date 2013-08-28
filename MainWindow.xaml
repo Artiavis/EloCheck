@@ -75,7 +75,7 @@
                     <TextBlock Name="EnemyName3" HorizontalAlignment="Right" Margin="0,274,92,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
                     <TextBlock Name="EnemyName4" HorizontalAlignment="Right" Margin="0,334,92,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
                     <TextBlock Name="EnemyName5" HorizontalAlignment="Right" Margin="0,394,92,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" TextAlignment="Center"/>
-                    
+
                     <!-- Division Medal for Player Team -->
                     <Image Name="PlayerDiv1" HorizontalAlignment="Left" Height="60" Margin="290,136,0,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
                     <Image Name="PlayerDiv2" HorizontalAlignment="Left" Height="60" Margin="290,196,0,0" VerticalAlignment="Top" Width="69" SourceUpdated="imgSrc_update"/>
@@ -115,7 +115,7 @@
                         <ComboBoxItem Content="EUW"/>
                         <ComboBoxItem Content="EUNE"/>
                     </ComboBox>
-                    <TextBox Margin="230,20,225,409" x:Name="SummonerName"  Padding=".8" KeyDown="SummonerName_keydown">
+                    <TextBox Margin="230,20,225,409" x:Name="SummonerName" KeyDown="SummonerName_keydown">
                         <TextBox.Style>
                             <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                                 <Style.Resources>
@@ -163,30 +163,71 @@
                         </acc:AccordionItem>
                     </acc:Accordion>
                     -->
-                    <TextBlock HorizontalAlignment="Left" Margin="302,79,0,0" TextWrapping="Wrap" Text="Champ Stats" VerticalAlignment="Top" Height="30" Width="119" TextDecorations="Underline" FontWeight="Bold" FontSize="20"/>
-                    <TextBlock Name="SummonerNameBlock" Text="Name" HorizontalAlignment="Left" Margin="18,121,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="190" FontSize="16" FontWeight="Bold"/>
-                    <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="71,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.08,-1.25" Height="22" Width="91" FontSize="16"><Run FontWeight="Bold" Text="League Info"/></TextBlock>
-                    <Image Name="Season3Medal" HorizontalAlignment="Left" Height="132" Margin="51,309,0,0" VerticalAlignment="Top" Width="132" Source="pack://application:,,,/Resources/medals/challenger_1.png"/>
-                    <TextBlock HorizontalAlignment="Left" Margin="188,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="T:"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="188,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="W:"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="188,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="L:"/></TextBlock>
-                    <TextBlock Name="TotalGamesBox" HorizontalAlignment="Left" Margin="219,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"><Run FontWeight="Bold" Text="0"/></TextBlock>
-                    <TextBlock Name="TotalWinsBox" HorizontalAlignment="Left" Margin="219,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FF0A952A"><Run FontWeight="Bold" Text="0"/></TextBlock>
-                    <TextBlock Name="TotalLossesBox" HorizontalAlignment="Left" Margin="219,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FFC10909"><Run FontWeight="Bold" Text="0"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Left" Margin="317,280,0,0" TextWrapping="Wrap" Text="Player Stats" VerticalAlignment="Top" Height="22" Width="92" TextDecorations="Underline" FontWeight="Bold" FontSize="16"/>
-                    <ScrollViewer HorizontalAlignment="Left" Height="362" Margin="492,79,0,0" VerticalAlignment="Top" Width="256"/>
-                    <StackPanel HorizontalAlignment="Left" Height="100" Margin="18,161,0,0" VerticalAlignment="Top" Width="100">
+                    <TextBlock HorizontalAlignment="Left" Margin="590,83,0,0" TextWrapping="Wrap" Text="Champ Stats" VerticalAlignment="Top" Height="22" Width="119" TextDecorations="{x:Null}" FontWeight="Bold" FontSize="18"/>
+                    <TextBlock Name="SummonerNameBlock" Text="Name" HorizontalAlignment="Left" Margin="18,83,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="190" FontSize="18" FontWeight="Bold"/>
+                    <TextBlock Name="TierDiv" TextAlignment="Center" HorizontalAlignment="Left" Margin="67,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.08,-1.25" Height="22" Width="91" FontSize="16" FontWeight="Bold" Text="Tier"/>
+                    <Image Name="Season3Medal" HorizontalAlignment="Left" Height="132" Margin="48,301,0,0" VerticalAlignment="Top" Width="132" Source="pack://application:,,,/Resources/medals/challenger_1.png"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="188,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="T:"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="188,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="W:"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Left" Margin="188,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run FontWeight="Bold" Text="L:"/></TextBlock>
+                    <TextBlock Name="TotalGamesBox" HorizontalAlignment="Left" Margin="219,311,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" FontWeight="Bold" Text="0"/>
+                    <TextBlock Name="TotalWinsBox" HorizontalAlignment="Left" Margin="219,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FF0A952A" FontWeight="Bold" Text="0"/>
+                    <TextBlock Name="TotalLossesBox" HorizontalAlignment="Left" Margin="219,385,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Foreground="#FFC10909" FontWeight="Bold" Text="0"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="326,83,0,0" TextWrapping="Wrap" Text="Player Stats" VerticalAlignment="Top" Height="22" Width="104" TextDecorations="{x:Null}" FontWeight="Bold" FontSize="18"/>
+                    <ScrollViewer HorizontalAlignment="Left" Height="303" Margin="262,130,0,0" VerticalAlignment="Top" Width="243">
+                        <DataGrid Name="PlayerDataGrid">
+                            <DataGrid.ContextMenu>
+                                <ContextMenu>
+
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+                        </DataGrid>
+                    </ScrollViewer>
+                    <StackPanel HorizontalAlignment="Left" Height="100" Margin="15,138,0,0" VerticalAlignment="Top" Width="100">
                         <Image Name="Season1Medal" Height="80" Source="pack://application:,,,/Resources/medals/unranked.png"/>
                         <TextBlock TextAlignment="Center" FontSize="12" FontWeight="Bold" Text="Season 1" />
                     </StackPanel>
-                    <StackPanel HorizontalAlignment="Left" Height="100" Margin="108,161,0,0" VerticalAlignment="Top" Width="100">
+                    <StackPanel HorizontalAlignment="Left" Height="100" Margin="111,138,0,0" VerticalAlignment="Top" Width="100">
                         <Image Name="Season2Medal" Height="80" Source="pack://application:,,,/Resources/medals/unranked.png"/>
                         <TextBlock TextAlignment="Center" FontSize="12" FontWeight="Bold" Text="Season 2" />
                     </StackPanel>
+                    <TextBlock TextAlignment="Center" FontSize="12" FontWeight="Bold" Text="Season 3" Margin="64,425,594,10" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Settings" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" IsEnabled="False">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Name="SettingsTabItem" Header="Settings" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" IsEnabled="False">
+                <Grid Background="#FFE5E5E5">
+                    <GroupBox Header="Spectate Mode Configuration" HorizontalAlignment="Left" Margin="69,58,0,0" VerticalAlignment="Top" Height="152" Width="612">
+                        <Grid HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="600">
+                            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="EloCheck can launch your League of Legends spectator-mode client directly if you provide the path to your League of Legends installation." VerticalAlignment="Top" Height="40" Width="580"/>
+                            <Button Content="Select Folder" HorizontalAlignment="Left" Margin="504,55,0,0" VerticalAlignment="Top" Width="86" Click="fillPath_click" />
+                            <TextBox x:Name="LeagueInstallFolder" HorizontalAlignment="Left" Height="23" Margin="41,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="445">
+                                <TextBox.Style>
+                                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                        <Style.Resources>
+                                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                                <VisualBrush.Visual>
+                                                    <Label Content="  Enter Path Here" Foreground="LightGray" />
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </Style.Resources>
+                                        <Style.Triggers>
+                                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                            </Trigger>
+                                            <Trigger Property="Text" Value="{x:Null}">
+                                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                            </Trigger>
+                                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                                <Setter Property="Background" Value="White" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                            <Image Name="FolderStatusImageBox" HorizontalAlignment="Left" Height="23" Margin="10,55,0,0" VerticalAlignment="Top" Width="23"/>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
             </TabItem>
             <TabItem Header="About" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top">
                 <Grid Background="#FFE5E5E5">

@@ -85,7 +85,8 @@ namespace EloCheck
             listOfEnemyViews.Add(new GamePlayerView(EnemyImage5, EnemyName5, EnemyDiv5));
             EnemyViews = listOfEnemyViews;
 
-            playerStatsView = new PlayerStatsView(SummonerNameBlock, Season1Medal, Season2Medal, Season3Medal);
+            playerStatsView = new PlayerStatsView(SummonerNameBlock, Season1Medal, Season2Medal,
+                Season3Medal, TierDiv, TotalGamesBox, TotalWinsBox, TotalLossesBox, PlayerDataGrid);
         }
 
         private void ClearGameView()
